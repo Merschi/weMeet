@@ -1,7 +1,7 @@
 export class Member {
-    constructor: {
+    constructor(
         public name: string,
-        public email: string
+        public email: string,
         public group: string
-    }
+    ) {}
 }
