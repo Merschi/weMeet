@@ -1,9 +1,39 @@
-<div class="ui middle aligned selection divided list">
-<div *ngFor="let member of members" class="item">
-	<div class="content">
-            <div class="header">Name: {{member.name}}</div>
-            <div class="description">E-Mail: {{member.email}}</div>
-            <div class="description">Group: {{member.group}}</div>
-        </div>
+<!--div class="ui center aligned grid divided list"-->
+<!--div class="ui three column centered grid"-->
+<!-- div class="ui three column grid">
+  <div class="column"></div>
+  <div class="column"-->
+<div *ngFor="let member of members" class="ui centered card">
+  <div class="content">
+    <div class="header">{{member.name}}
+      <span class="ui red tag label">aktueller Termin</span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="description">E-Mail: {{member.email}}</div>
+    <div class="description">Group: {{member.group}}</div>
+  </div>
+
+  <div class="content">
+    <span class="ui star rating" data-rating="3" data-max-rating="7"></span>
+    <span class="right floated" data-tooltip="Teilnehmen" data-position="top left">
+      <i class="heart outline like icon"></i>
+      <i class="thumbs down icon"></i>
+      <a><i class="green thumbs up icon"></i></a>
+       <i class="green thumbs up icon"></i>
+      <span data-content="Add users to your feed">
+       <i class="green thumbs up icon"></i>
+        </span>
+
+      17 likes
+    </span>
+        <i class="comment icon"></i>
+        5 comments
+        <i class="small green checkmark icon"></i><i class="small green checkmark icon"></i><i class="small green checkmark icon"></i><i class="small green checkmark icon"></i>
+    <i class="green check square outline icon"></i><i class="green check square outline icon"></i><i class="large green user circle outline icon"></i><i class="green check circle outline icon"></i><i class="grey question circle outline icon"></i>
+        <div class="ui star rating" data-rating="3" data-max-rating="7"></div>
+  </div>
 </div>
-</div>
+<!--/div>
+<div class="column"></div>
+</div-->
