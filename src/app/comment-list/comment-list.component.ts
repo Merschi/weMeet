@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WmComment } from '../shared/comment';
+import { Comment } from '../shared/comment';
 
 
 
@@ -9,20 +9,20 @@ import { WmComment } from '../shared/comment';
   styleUrls: ['./comment-list.component.css']
 })
 export class CommentListComponent implements OnInit {
-	comments : [WmComment]
+	comments : [Comment]
 
 	constructor() { };
 
 	
 	ngOnInit() {
 		this.comments = [		
-	    new WmComment( 
+	    new Comment( 
 		"M1",
 		"chat1",
 		"comment text",
 		"10.05.2018 10:43"
 	    ),
-	    new WmComment(
+	    new Comment(
 		"M2", 
 		"chat1",
 		"comment text zwei",

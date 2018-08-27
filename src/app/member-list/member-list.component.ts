@@ -17,12 +17,16 @@ export class MemberListComponent implements OnInit {
    ngOnInit() {
    console.log("OnInit");
     this.members = [
-        new Member( "Ludger",
-                    "Ludger.Otte@telekom.de",
+	    new Member( 
+		    "member_01",
+		    "Ludger",
+                    "Lude@example.com",
                     "Doko"
                   ),
-        new Member( "Rainer",
-                    "Rainer.Mense@brillux.de",
+	    new Member( 
+		    "member_02",
+		    "Rainer",
+                    "Rainer@example.com",
                     "Doko"
                   )
      ];

@@ -1,9 +1,10 @@
-export class comment {
+export class Comment {
 	constructor(
-		public text : string,
-		public chatRefId: string,
 		public memberRefId: string,
-		public creationDT: string,
+		public chatRefId: string,
+		public text : string,
+		public at: string,
+		public nextComment: Comment 
 	){}
 
 }

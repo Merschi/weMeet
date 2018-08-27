@@ -1,7 +1,8 @@
 export class Member {
-    constructor(
+	constructor(
+	public id: string,
         public name: string,
         public email: string,
-        public group: string
+        public groupRefId: string
     ) {}
 }
