@@ -1,7 +1,8 @@
-export class Chat {
+
+export class Group {
 	constructor(
-	public id: string,
+        public id: string,
         public name: string,
-        public members[]: string 
+        public memberRefIds: [string] 
     ) {}
 }
