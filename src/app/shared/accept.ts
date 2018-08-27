@@ -1,12 +1,14 @@
 
-
 export class Accept {
+	
 	constructor(
 		public memberRefId: string,
-		public meetRefId: string,
+		public meetChatRefId: string,
 		public meetDate: string,
-		public meetState: state
+		public level: Accept.level
 	) {}
-	
-	enum state : {Yes,Maybe,No}
+}
+
+export namespace Accept {
+  export enum level {Yes,Maybe,No};
 }

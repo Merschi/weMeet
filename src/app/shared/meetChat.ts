@@ -1,10 +1,12 @@
+import { Chat } from './chat';
+import { Accept } from './accept';
+
 export class MeetChat extends Chat {
+	acceptances: [Accept];
 	constructor(
 		id: string,
 		groupRefId: string,
 		subject: string,
-		firstComment: commentRefId = ""
-		public proposedDates: string[],
-		public acceptances: accept[],
-    ) {}
+		public proposedDates: [string]
+    ) { super(id, groupRefId, subject) ; }
 }
