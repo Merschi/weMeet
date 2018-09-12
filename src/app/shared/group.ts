@@ -1,8 +1,8 @@
 
 export class Group {
-	constructor(
-        public id: string,
-        public name: string,
-        public memberRefIds: [string] 
-    ) {}
+  constructor(
+    public id: string,
+    public name: string,
+    public memberRefIds: [string]
+  ) { }
 }

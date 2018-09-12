@@ -1,11 +1,11 @@
 export class Comment {
-	next: Comment;
+  next: Comment;
 
-	constructor(
-		public memberRefId: string,
-		public chatRefId: string,
-		public at: string,
-		public text : string
-	){}
+  constructor(
+    public memberRefId: string,
+    public chatRefId: string,
+    public at: string,
+    public text: string
+  ) { }
 }
 

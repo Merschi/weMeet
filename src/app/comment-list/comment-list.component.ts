@@ -9,26 +9,25 @@ import { Comment } from '../shared/comment';
   styleUrls: ['./comment-list.component.css']
 })
 export class CommentListComponent implements OnInit {
-	comments : [Comment]
+  comments: Comment[];
+  constructor() { }
 
-	constructor() { };
 
-	
-	ngOnInit() {
-		this.comments = [		
-	    new Comment( 
-		"M1",
-		"chat1",
-		"comment text",
-		"10.05.2018 10:43"
-	    ),
-	    new Comment(
-		"M2", 
-		"chat1",
-		"comment text zwei",
-		"10.05.2018 10:48"
-	    )
-	    ]; 
+  ngOnInit() {
+    this.comments = [
+      new Comment(
+        'M1',
+        'chat1',
+        'comment text',
+        '10.05.2018 10:43'
+      ),
+      new Comment(
+        'M2',
+        'chat1',
+        'comment text zwei',
+        '10.05.2018 10:48'
+      )
+    ];
 
-	}
+  }
 }
