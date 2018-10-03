@@ -2,7 +2,7 @@ import { Chat } from './chat';
 import { Accept } from './accept';
 
 export class MeetChat extends Chat {
-  acceptances: [Accept];
+  private acceptances: Accept[] = [];
   constructor(
     id: string,
     groupRefId: string,

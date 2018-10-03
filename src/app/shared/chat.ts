@@ -1,7 +1,7 @@
 import { Comment } from './comment';
 
 export class Chat {
-    firstComment: Comment;
+    private firstComment: Comment;
 
     constructor(
         public id: string,

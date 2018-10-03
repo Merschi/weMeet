@@ -1,5 +1,5 @@
 export class Comment {
-  next: Comment;
+  private next: Comment;
 
   constructor(
     public memberRefId: string,

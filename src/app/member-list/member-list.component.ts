@@ -10,7 +10,7 @@ import { Member } from '../shared/member';
 
 export class MemberListComponent implements OnInit {
 
-  members: [Member];
+  private members: Member[] = [];
 
   constructor() { }
 
@@ -29,6 +29,14 @@ export class MemberListComponent implements OnInit {
         'Rainer@example.com',
         'Doko'
       ));
+      this.members.push(
+        new Member(
+          'member_03',
+          'Stephan',
+          'Stephan@example.com',
+          'Doko'
+        )
+      );
   }
 
 }
