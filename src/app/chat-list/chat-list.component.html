@@ -1,0 +1,11 @@
+
+<div *ngFor="let chat of chats" class="ui centered card">
+  <div class="content">
+    <div class="header">Thema: {{chat.subject}}
+    </div>
+  </div>
+  <div class="content">
+    <div class="description">Letzter Kommentar: {{chat.lastCommentTime}}</div>
+    <div class="description">Group: {{chat.groupRefId}}</div>
+  </div>
+</div>

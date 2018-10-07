@@ -7,6 +7,6 @@ export class MeetChat extends Chat {
     id: string,
     groupRefId: string,
     subject: string,
-    public proposedDates: [string]
+    public proposedDates: string[]
   ) { super(id, groupRefId, subject); }
 }

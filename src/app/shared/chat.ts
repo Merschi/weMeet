@@ -2,6 +2,7 @@ import { Comment } from './comment';
 
 export class Chat {
     private firstComment: Comment;
+    public lastCommentTime = 'unknown';
 
     constructor(
         public id: string,
