@@ -8,4 +8,8 @@
     <div class="description">Letzter Kommentar: {{chat.lastCommentTime}}</div>
     <div class="description">Group: {{chat.groupRefId}}</div>
   </div>
+  <div *ngIf="chat.proposedDates" class="content">
+      <div class="description">Dates</div>
+    <div *ngFor="let d of chat.proposedDates" class="description">{{d}}</div>
+  </div>
 </div>

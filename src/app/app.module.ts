@@ -7,6 +7,7 @@ import { MemberListComponent } from './member-list/member-list.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 
+import { ChatStoreService } from './services/chat-store.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ChatListComponent } from './chat-list/chat-list.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ChatStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
