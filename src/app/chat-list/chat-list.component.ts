@@ -16,4 +16,10 @@ export class ChatListComponent implements OnInit {
   ngOnInit() {
     this.chats = this.cs.getAll();
   }
+
+  selectChat(chatId: string) {
+    console.log('chatId: ', chatId);
+    const toSelect: Chat = this.chats.find(function(this, c) { return c.id === chatId; });
+    console.log('toSelect: ', toSelect.subject);
+  }
 }

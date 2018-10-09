@@ -1,5 +1,5 @@
 
-<div *ngFor="let chat of chats" class="ui centered card">
+<div *ngFor="let chat of chats" class="ui centered card" (click)="selectChat(chat.id)">
   <div class="content">
     <div class="header">Thema: {{chat.subject}}
     </div>
