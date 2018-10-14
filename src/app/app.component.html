@@ -3,9 +3,9 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<h2>Liste der Anwender </h2>
-<wm-member-list></wm-member-list>
-<h2>Liste der Chats</h2>
-<wm-chat-list></wm-chat-list>
-<h2>Liste der Kommentare </h2>
-<wm-comment-list></wm-comment-list>
+<a routerLink="/chats">Themen</a>&nbsp;|&nbsp;
+<a routerLink="/comments">Kommentare</a> &nbsp;|&nbsp;
+<a routerLink="/members">Mitglieder</a>
+
+<router-outlet></router-outlet>
+

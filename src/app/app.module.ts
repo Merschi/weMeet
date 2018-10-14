@@ -8,6 +8,8 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 
 import { ChatStoreService } from './services/chat-store.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { ChatStoreService } from './services/chat-store.service';
     ChatListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [ChatStoreService],
   bootstrap: [AppComponent]
