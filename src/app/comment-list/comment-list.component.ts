@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Comment } from '../shared/comment';
 import { ActivatedRoute } from '@angular/router';
+import { CommentStoreService } from '../services/comment-store.service';
 
 
 
@@ -14,36 +15,15 @@ export class CommentListComponent implements OnInit {
   comments: Comment[] = [];
   chatRefId: string;
   constructor(
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private cs: CommentStoreService
+  ) { this.getChatRefId(); }
 
   getChatRefId(): void {
     this.chatRefId = this.route.snapshot.paramMap.get('chatId');
   }
 
   ngOnInit() {
-    this.getChatRefId();
-    // TODO: Kommentare zum chatRefId per service holen!
-    this.comments.push(
-      new Comment(
-        'member_01',
-        'chat1',
-        '10.05.2018 10:43',
-        'comment text'
-      ));
-      this.comments.push(
-        new Comment(
-        'member_03',
-        'chat1',
-        '10.05.2018 10:48',
-        'comment text zwei'
-      ));
-      this.comments.push(
-        new Comment(
-        'member_02',
-        'chat1',
-        '10.05.2018 10:40',
-        'comment text drei'
-      ));
+    this.comments = this.cs.getByChat(this.chatRefId);
   }
 }

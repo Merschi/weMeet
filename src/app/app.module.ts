@@ -8,6 +8,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 import { ChatListComponent } from './chat-list/chat-list.component';
 
 import { ChatStoreService } from './services/chat-store.service';
+import { CommentStoreService } from './services/comment-store.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 
@@ -22,7 +23,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ChatStoreService],
+  providers: [ChatStoreService, CommentStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
