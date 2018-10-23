@@ -5,15 +5,23 @@
     <div class="header"><i class="comments outline middle aligned icon"></i> Thema: {{chat.subject}}</div>
   </div>
 
-  <div class="content">
-    <div class="description">Letzter Kommentar: {{chat.lastCommentTime}}</div>
-    <div class="description">Group: {{chat.groupRefId}}</div>
-  </div>
-
-
   <div *ngIf="chat.proposedDates" class="extra content">
     <div class="description">Dates</div>
     <div *ngFor="let d of chat.proposedDates" class="description">{{d}}</div>
   </div>
+
+  <div class="extra content">
+      <span class="left floated">
+          <i class="comments icon"></i>
+          {{chat.count}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="users icon"></i>
+          {{chat.groupRefId}}
+      </span>
+
+      <span class="right floated">
+          <i class="clock icon"></i>
+        {{chat.lastCommentTime}}
+      </span>
+    </div>
 
 </div>

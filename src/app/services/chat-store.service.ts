@@ -10,18 +10,21 @@ export class ChatStoreService {
       new Chat(
         'c1',
         'doko',
-        'Weihnachstessen 2020'
+        'Weihnachstessen 2020',
+        5
       ),
       new MeetChat(
         'c2',
         'doko',
         'Termin KW XY',
+        3,
         ['Fr 16.02.2018', 'Sa 17.02.2018' ]
       ),
       new Chat(
         'c3',
         'doko',
-        'laber'
+        'laber',
+        27
       )
     ];
   }

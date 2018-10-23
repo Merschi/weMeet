@@ -7,6 +7,7 @@ export class Chat {
     constructor(
         public id: string,
         public groupRefId: string,
-        public subject: string
+        public subject: string,
+        public count: number
     ) {}
 }
