@@ -1,21 +1,45 @@
-<h2>Kommentare</h2>
-<h3>Thema: {{chatRefId}}</h3>
-<div *ngFor="let comment of comments" class="ui centered card">
-  <div class="content">
-    <div class="header">{{comment.memberRefId}}
-    <div>
-	{{comment.at}}
-      <span class="ui red tag label">aktueller Termin</span>
-    <div>
-    </div>
-    </div>
+<!--div class="ui fixed inverted menu"
+<div class="ui container">
+  <div class="header item">Diskussion zu {{chatRefId}}</div>
+  <div class="header item">gaga</div>
+</div>
+</div-->
 
+  <div class="ui container" style="margin-top: 45px">
+  <div class="header item">
+      Diskussion zu {{chatRefId}}
   </div>
 
-  <div class="content">
-	  {{comment.text}}
+
+</div>
+
+<div class="ui comments">
+  <div *ngFor="let comment of comments" class="ui comment">
+
+    <div class="avatar">
+      <i class="big user outline  icon"></i>
+    </div>
+
+    <div class="content">
+      <span class="author">{{comment.memberRefId}}</span>
+      <div class="metadata">
+        <div class="date">
+          {{comment.at}}
+        </div>
+      </div>
+      <div class="text">
+        {{comment.text}}
+      </div>
+    </div>
+
+
   </div>
-  <div class="content">
+</div>
+
+<!--
+     <span class="ui small red tag label">aktueller Termin</span>
+
+    <div class="content">
     <span class="ui star rating" data-rating="3" data-max-rating="7"></span>
     <span class="right floated" data-tooltip="Teilnehmen" data-position="top left">
       <i class="heart outline like icon"></i>
@@ -34,6 +58,4 @@
     <i class="green check square outline icon"></i><i class="green check square outline icon"></i><i class="large green user circle outline icon"></i><i class="green check circle outline icon"></i><i class="grey question circle outline icon"></i>
         <div class="ui star rating" data-rating="3" data-max-rating="7"></div>
   </div>
-</div>
-
-
+-->

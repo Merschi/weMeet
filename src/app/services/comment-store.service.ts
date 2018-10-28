@@ -29,7 +29,7 @@ export class CommentStoreService {
           'Rainer',
           'c2',
           '16.3.2018 17:00',
-          'Rainers c2 Kommentar....'
+          'Rainers c2 langer langer langer langer langer langer langer langer langer langer langer langer v langer langer langer langervv langer langer langer  Kommentar....'
         ),
         new Comment(
           'Ludger',
