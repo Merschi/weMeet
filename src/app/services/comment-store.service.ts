@@ -54,6 +54,15 @@ export class CommentStoreService {
 
   getByChat( chatRefId: string) {
     console.log('get comments of chat: ', chatRefId);
-    return this.comments.filter( c => c.chatRefId === chatRefId);
+	  let comment_list = this.comments.filter( c => c.chatRefId === chatRefId);
+	  let n = 10;
+	  for (var i = 1; i < n; i++) {
+	  	comment_list = comment_list.concat(comment_list);
+		  console.log(' n =', comment_list.length);
+	  }
+	  return comment_list;
+  }
+  getSubjectByChat( chatRefId: string) {
+	  return "Thema von " + chatRefId;
   }
 }

@@ -4,16 +4,15 @@
   <div class="header item">gaga</div>
 </div>
 </div-->
-
-  <div class="ui container" style="margin-top: 45px">
-  <div class="header item">
-      Diskussion zu {{chatRefId}}
+  <div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
+  <div class="header fixed item">
+      Thema: {{chatSubject}}
   </div>
 
 
 </div>
 
-<div class="ui comments">
+<div class="ui comments" style="margin-top: 100px">
   <div *ngFor="let comment of comments" class="ui comment">
 
     <div class="avatar">
@@ -35,6 +34,7 @@
 
   </div>
 </div>
+
 
 <!--
      <span class="ui small red tag label">aktueller Termin</span>

@@ -13,7 +13,8 @@ import { CommentStoreService } from '../services/comment-store.service';
 
 export class CommentListComponent implements OnInit {
   comments: Comment[] = [];
-  chatRefId: string;
+	chatRefId: string;
+	chatSubject: string;
   constructor(
     private route: ActivatedRoute,
     private cs: CommentStoreService
@@ -25,5 +26,6 @@ export class CommentListComponent implements OnInit {
 
   ngOnInit() {
     this.comments = this.cs.getByChat(this.chatRefId);
+    this.chatSubject = this.cs.getSubjectByChat(this.chatRefId);
   }
 }
