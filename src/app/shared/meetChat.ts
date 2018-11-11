@@ -6,23 +6,23 @@ moment.locale('de');
 
 export class MeetChat extends Chat {
   private acceptances: Accept[] = [];
-  private proposedDates: moment.Moment[];
+  private proposed: {
+      at: string,
+      upComing: boolean
+    }[];
+ private proposedDates: moment.Moment[];
   constructor(
     id: string,
     groupRefId: string,
     subject: string,
     count: number,
-    proposed_dates: string[],
-    proposed: {
-      at: string,
-      upComing: boolean
-    }[]
+    proposed_dates: string[]
   ) {
     super(id, groupRefId, subject, count);
     this.proposedDates = proposed_dates.map(d => moment(d));
   }
 
-  getProposedDatesFormatted (): string[] {
+  getProposedDatesFormatted (): string[] { 
     return this.proposedDates.map( d => {
       return d.calendar(); } );
   }
