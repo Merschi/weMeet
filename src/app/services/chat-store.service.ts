@@ -18,7 +18,7 @@ export class ChatStoreService {
         'doko',
         'Termin KW XY',
         3,
-        ['Fr 16.02.2018', 'Sa 17.02.2018' ]
+        ['2018-11-11', '2018-11-12']
       ),
       new Chat(
         'c3',

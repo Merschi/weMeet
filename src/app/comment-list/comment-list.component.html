@@ -1,37 +1,25 @@
-<!--div class="ui fixed inverted menu"
-<div class="ui container">
-  <div class="header item">Diskussion zu {{chatRefId}}</div>
-  <div class="header item">gaga</div>
-</div>
-</div-->
-  <div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
+<div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
   <div class="header fixed item">
-      Thema: {{chatSubject}}
+    Thema: {{chatSubject}}
   </div>
-
-
 </div>
 
 <div class="ui comments" style="margin-top: 100px">
   <div *ngFor="let comment of comments" class="ui comment">
-
     <div class="avatar">
       <i class="big user outline  icon"></i>
     </div>
-
     <div class="content">
       <span class="author">{{comment.memberRefId}}</span>
       <div class="metadata">
         <div class="date">
-          {{comment.at}}
+          {{comment.getAt()}}
         </div>
       </div>
       <div class="text">
         {{comment.text}}
       </div>
     </div>
-
-
   </div>
 </div>
 

@@ -1,13 +1,12 @@
 <h2>Themen</h2>
 <div *ngFor="let chat of chats" class="ui centered card" [routerLink]="['/comments', chat.id]">
-  <!--a routerLink="/comments/{{chat.id}}"> XXXX </a-->
   <div class="content">
     <div class="header"><i class="comments outline middle aligned icon"></i> Thema: {{chat.subject}}</div>
   </div>
 
-  <div *ngIf="chat.proposedDates" class="extra content">
+  <div *ngIf="chat.hasDates()" class="extra content">
     <div class="description">Dates</div>
-    <div *ngFor="let d of chat.proposedDates" class="description">{{d}}</div>
+    <div *ngFor="let d of chat.getProposedDatesFormatted()" class="description">{{d}}</div>
   </div>
 
   <div class="extra content">

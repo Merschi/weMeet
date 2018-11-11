@@ -10,4 +10,8 @@ export class Chat {
         public subject: string,
         public count: number
     ) {}
+
+    hasDates (): boolean {
+      return false;
+    }
 }
