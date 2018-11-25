@@ -14,6 +14,7 @@ interface MeetChatEntry {
 
 export class MeetChat extends Chat {
   private acceptances: Accept[] = [];
+
   private proposedDates: moment.Moment[];
   private entry: MeetChatEntry;
   constructor(entry: MeetChatEntry) {
@@ -25,6 +26,7 @@ export class MeetChat extends Chat {
         count: entry.count
       });
     this.proposedDates = entry.proposed_dates.map(d => moment(d));
+
   }
 
   getProposedDatesFormatted (): string[] {
