@@ -19,7 +19,7 @@ export class ChatListComponent implements OnInit {
 
   selectChat(chatId: string) {
     console.log('chatId: ', chatId);
-    const toSelect: Chat = this.chats.find(function(this, c) { return c.id === chatId; });
-    console.log('toSelect: ', toSelect.subject);
+    const toSelect: Chat = this.chats.find(function(this, c) { return c.getId() === chatId; });
+    console.log('toSelect: ', toSelect.getSubject());
   }
 }

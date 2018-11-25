@@ -13,8 +13,8 @@ import { CommentStoreService } from '../services/comment-store.service';
 
 export class CommentListComponent implements OnInit {
   comments: Comment[] = [];
-	chatRefId: string;
-	chatSubject: string;
+  chatRefId: string;
+  chatSubject: string;
   constructor(
     private route: ActivatedRoute,
     private cs: CommentStoreService

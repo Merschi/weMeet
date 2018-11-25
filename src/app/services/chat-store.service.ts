@@ -8,23 +8,29 @@ export class ChatStoreService {
   constructor() {
     this.chats = [
       new Chat(
-        'c1',
-        'doko',
-        'Weihnachstessen 2020',
-        5
+        {
+          id: 'c1',
+          groupRefId: 'doko',
+          subject: 'Weihnachstessen 2020',
+          count: 5
+        }
       ),
       new MeetChat(
-        'c2',
-        'doko',
-        'Termin KW XY',
-        3,
-        ['2018-11-11', '2018-11-12']
+        {
+          id: 'c2',
+          groupRefId: 'doko',
+          subject: 'Termin KW XY',
+          count: 3,
+          proposed_dates: ['2018-11-11', '2018-11-12']
+        }
       ),
       new Chat(
-        'c3',
-        'doko',
-        'laber',
-        27
+        {
+          id: 'c3',
+          groupRefId: 'doko',
+          subject: 'laber',
+          count: 27
+        }
       )
     ];
   }

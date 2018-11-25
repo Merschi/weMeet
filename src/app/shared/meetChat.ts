@@ -4,22 +4,27 @@ import * as moment from 'moment';
 import 'moment/locale/de';
 moment.locale('de');
 
+interface MeetChatEntry {
+  id: string;
+  groupRefId: string;
+  subject: string;
+  count: number;
+  proposed_dates: string[];
+}
+
 export class MeetChat extends Chat {
   private acceptances: Accept[] = [];
   private proposedDates: moment.Moment[];
-  constructor(
-    id: string,
-    groupRefId: string,
-    subject: string,
-    count: number,
-    proposed_dates: string[],
-    proposed: {
-      at: string,
-      upComing: boolean
-    }[]
-  ) {
-    super(id, groupRefId, subject, count);
-    this.proposedDates = proposed_dates.map(d => moment(d));
+  private entry: MeetChatEntry;
+  constructor(entry: MeetChatEntry) {
+    super(
+      {
+        id: entry.id,
+        groupRefId: entry.groupRefId,
+        subject: entry.subject,
+        count: entry.count
+      });
+    this.proposedDates = entry.proposed_dates.map(d => moment(d));
   }
 
   getProposedDatesFormatted (): string[] {
@@ -33,4 +38,5 @@ export class MeetChat extends Chat {
     const now = moment();
     return (m.isAfter(now) && m.diff(now, 'days') < 8) ;
   }
+
 }
