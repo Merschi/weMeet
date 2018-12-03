@@ -1,4 +1,4 @@
-<h2>Themen</h2>
+
 <div *ngFor="let chat of chats" class="ui centered card" [routerLink]="['/comments', chat.id]">
   <div class="content">
     <div class="header"><i class="comments outline middle aligned icon"></i> Thema: {{chat.subject}}</div>
