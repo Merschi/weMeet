@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import * as moment from 'moment';
+
 import 'moment/locale/de';
+
+declare var $: any;
 
 moment.locale('de');
 
@@ -19,5 +22,9 @@ export class AppComponent {
   }
   updateNow (that) {
     that.now = moment().format('LLLL:ss');
+  }
+  toggleSidebar() {
+    console.log('toggleSidebar...');
+    $('.ui.sidebar').sidebar('toggle');
   }
 }

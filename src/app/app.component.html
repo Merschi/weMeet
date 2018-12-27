@@ -1,14 +1,25 @@
+
+<div class="ui sidebar vertical left inverted menu" >
+  <a href="#" class="item">punkt 1 </a>
+  <a href="#" class="item">punkt 2 </a>
+  <a href="#" class="item">punkt 3 </a>
+  <a href="#" class="item">punkt 4 </a>
+</div>
+
+
 <div class="ui top attached inverted menu">
-  <a class="item">
-    <i class="sidebar icon"></i>
+  <a id="toggle" class="item" (click)="toggleSidebar()">
+    <i class="sidebar icon "></i>
     Menu
   </a>
+
   <div class="header item">{{now}}</div>
-    <a href="." class="header item">{{title}}</a>
-    <a class="header item" routerLink="/chats">Themen</a>
-    <a class="header item" routerLink="/members">Mitglieder</a>
+  <a href="." class="header item">{{title}}</a>
+  <a class="header item" routerLink="/chats">Themen</a>
+  <a class="header item" routerLink="/members">Mitglieder</a>
 
 </div>
+
 
 
 
@@ -54,7 +65,7 @@
 -->
 
 <div class="ui bottom attached segment pushable">
-    <!--div class="ui inverted labeled icon left inline vertical sidebar menu uncover visible" >
+  <!--div class="ui inverted labeled icon left inline vertical sidebar menu uncover visible" >
       <a class="item">
         <i class="home icon"></i>
         Home
@@ -75,9 +86,7 @@
 
   <div class="pusher">
 
-        <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
   </div>
 </div>
-
-
