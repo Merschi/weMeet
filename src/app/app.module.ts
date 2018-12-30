@@ -10,6 +10,7 @@ import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatStoreService } from './services/chat-store.service';
 import { CommentStoreService } from './services/comment-store.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppComponent,
     MemberListComponent,
     CommentListComponent,
-    ChatListComponent
+    ChatListComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,

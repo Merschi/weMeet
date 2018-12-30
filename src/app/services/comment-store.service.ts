@@ -61,7 +61,7 @@ export class CommentStoreService {
   getByChat(chatRefId: string): Comment[] {
     console.log('get comments of chat: ', chatRefId);
     let comment_list = this.comments.filter(c => c.chatRefId === chatRefId);
-    const n = 10;
+    const n = 5;
     for (let i = 1; i < n; i++) {
       comment_list = comment_list.concat(comment_list);
       console.log(' n =', comment_list.length);
