@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Comment } from '../shared/comment';
+import { ChatStoreService } from '../services/chat-store.service';
+
+const cs: ChatStoreService = new ChatStoreService;
 
 @Injectable()
 export class CommentStoreService {
@@ -29,7 +32,8 @@ export class CommentStoreService {
           'Rainer',
           'c2',
           '2018-03-16 17:00',
-          'Rainers c2 langer langer langer langer langer langer langer langer langer langer langer langer v langer langer langer langervv langer langer langer  Kommentar....'
+          'Rainers c2 langer langer langer langer langer langer langer langer langer langer langer langer v langer' +
+          ' langer langer langervv langer langer langer  Kommentar....'
         ),
         new Comment(
           'Ludger',
@@ -68,7 +72,8 @@ export class CommentStoreService {
     }
     return comment_list;
   }
+
   getSubjectByChat(chatRefId: string): string {
-    return 'Thema von ' + chatRefId;
+    return cs.getChatById(chatRefId).getSubject();
   }
 }

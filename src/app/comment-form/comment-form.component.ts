@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ChatStoreService } from '../services/chat-store.service';
 
 
 
@@ -12,13 +13,22 @@ export class CommentFormComponent implements OnInit {
 
   chatRefId: string;
   chatSubject: string;
+  cs: ChatStoreService;
   constructor(
     private route: ActivatedRoute
-  ) { this.getChatRefId(); }
+  ) {
+    this.cs = new ChatStoreService;
+    this.updateChatRefId();
+    this.updateChatSubject();
+  }
 
-  getChatRefId(): void {
+  updateChatRefId(): void {
     this.chatRefId = this.route.snapshot.paramMap.get('chatId');
   }
 
-  ngOnInit() {}
+  updateChatSubject(): void {
+    this.chatSubject = this.cs.getChatById(this.chatRefId).getSubject();
+  }
+
+  ngOnInit() { }
 }

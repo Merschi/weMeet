@@ -4,8 +4,11 @@ import { MeetChat } from '../shared/meetChat';
 @Injectable()
 export class ChatStoreService {
 
-  chats: Chat[];
+  private chats: Chat[];
+  private chatById: {};
+
   constructor() {
+    this.chatById = {};
     this.chats = [
       new Chat(
         {
@@ -33,9 +36,20 @@ export class ChatStoreService {
         }
       )
     ];
+    this.buildIndex();
   }
 
   getAll() {
     return this.chats;
+  }
+
+  buildIndex() {
+    this.chats.forEach(c => {
+    this.chatById[c.getId()] = c;
+    });
+  }
+
+  getChatById(id): Chat {
+    return this.chatById[id];
   }
 }

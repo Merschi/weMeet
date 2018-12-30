@@ -18,9 +18,9 @@ export class CommentListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private cs: CommentStoreService
-  ) { this.getChatRefId(); }
+  ) { this.updateChatRefId(); }
 
-  getChatRefId(): void {
+  updateChatRefId(): void {
     this.chatRefId = this.route.snapshot.paramMap.get('chatId');
   }
 
