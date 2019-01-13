@@ -11,6 +11,10 @@ import { ChatStoreService } from './services/chat-store.service';
 import { CommentStoreService } from './services/comment-store.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CommentFormComponent } from './comment-form/comment-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserhomeComponent } from './userhome/userhome.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,11 +23,16 @@ import { CommentFormComponent } from './comment-form/comment-form.component';
     MemberListComponent,
     CommentListComponent,
     ChatListComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserhomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ChatStoreService, CommentStoreService],
   bootstrap: [AppComponent]

@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Register Now</h1>
+
+  <form [formGroup]="_registerForm">
+    <div class="ui form segment">
+
+
+        <div class="field">
+          <label for="Email">Email</label>
+          <input formControlName="email" id="Email" placeholder="Email" type="text">
+        </div>
+
+        <div class="field">
+          <label for="Username">Username</label>
+          <input formControlName="username" id="Username" placeholder="Username" type="text">
+        </div>
+
+        <div class="field">
+          <label for="Password">Password</label>
+          <input formControlName="password" id="Password" type="password">
+        </div>
+
+        <div class="field">
+          <label for="PasswordConfirm">Password Confirm</label>
+          <input formControlName="cpass" id="PasswordConfirm" type="password">
+        </div>
+
+        <button class="ui blue button" (click)="register()">Submit</button>
+
+
+
+    </div>
+  </form>
+  <div class="ui message">
+    Bereits registriert?
+    <div>
+      <button class="ui green button" (click)="gotoLogin()">Login</button>
+    </div>
+
+  </div>
+</div>

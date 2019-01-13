@@ -1,0 +1,36 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form [formGroup]="_loginForm" action="" method="get" class="ui large form">
+      <div class="ui stacked secondary  segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input formControlName="email" type="text" name="email" placeholder="E-mail address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input formControlName="password" type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="ui fluid large teal button" (click)="login()" >Login</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      Neu bei uns?
+      <div>
+          <button class="ui blue button" (click)="gotoRegister()">Registrieren</button>
+      </div>
+    </div>
+  </div>
+</div>
