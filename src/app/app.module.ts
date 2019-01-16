@@ -16,6 +16,9 @@ import { RegisterComponent } from './register/register.component';
 import { UserhomeComponent } from './userhome/userhome.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {UserService} from './services/user.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,9 +35,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [ChatStoreService, CommentStoreService],
+  providers: [ChatStoreService, CommentStoreService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
