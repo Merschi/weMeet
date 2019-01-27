@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 declare var $: any;
@@ -17,14 +18,26 @@ export class LoginComponent implements OnInit {
   });
 
   login() {
-    if ( !this._loginForm.valid  ) {
+    if (!this._loginForm.valid) {
       console.log('invalid form!');
       return;
+    } else {
+      this._userService.login(this._loginForm.value)
+        .subscribe(
+          data => {
+            console.log(data);
+            localStorage.setItem('token', data.toString());
+            this._router.navigate(['/userhome']);
+          },
+          error => { }
+        );
     }
     console.log(JSON.stringify(this._loginForm.value));
   }
 
-  constructor(private _router: Router) { }
+  constructor(private _userService: UserService,
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -64,5 +77,9 @@ export class LoginComponent implements OnInit {
 
     gotoRegister() {
       this._router.navigate(['/register']);
+    }
+
+    isValid(controlName) {
+      return this._loginForm.get(controlName).invalid && this._loginForm.get(controlName).touched;
     }
 }
