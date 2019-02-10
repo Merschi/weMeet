@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {UserService} from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ShowErrorComponent } from './show-error/show-error.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CommentFormComponent,
     LoginComponent,
     RegisterComponent,
-    UserhomeComponent
+    UserhomeComponent,
+    ShowErrorComponent
   ],
   imports: [
     BrowserModule,

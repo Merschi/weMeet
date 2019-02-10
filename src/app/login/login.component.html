@@ -5,26 +5,41 @@
         Log-in to your account
       </div>
     </h2>
-    <form [formGroup]="_loginForm" action="" method="get" class="ui large form">
-      <div class="ui stacked secondary  segment">
+    <form [formGroup]="_loginForm" action="" method="get" class="ui large form error">
+      <div class="ui stacked secondary segment">
         <div class="field">
           <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input formControlName="email" type="text" name="email" placeholder="E-mail address">
+            <i class="mail icon"></i>
+            <input formControlName="email" type="text" name="email" placeholder="E-Mail Adresse">
           </div>
+          <wm-show-error text="E-Mail" path="email"></wm-show-error>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input formControlName="password" type="password" name="password" placeholder="Password">
+            <input formControlName="password" type="password" name="password" placeholder="Passwort">
           </div>
+          <wm-show-error text="Passwort" path="password"></wm-show-error>
         </div>
-        <div class="ui fluid large teal button" (click)="login()" >Login</div>
+        <button class="ui fluid large teal button" (click)="login()" [disabled]="!_loginForm.valid">Login</button>
       </div>
 
-      <div class="ui error message"></div>
 
-    </form>
+<div *ngIf="_errorMessage" class="ui error message">
+  {{_errorMessage}}</div>
+
+
+
+
+<!--div *ngIf="!_loginForm.email.valid && (_loginForm.email.dirty || _loginForm.email.touched)" class="alert alert-danger">
+  <div *ngIf="_loginForm.email.errors.required">
+    E-Mail is required.
+  </div>
+</div-->
+
+
+</form>
+
 
     <div class="ui message">
       Neu bei uns?

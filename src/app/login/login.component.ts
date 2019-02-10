@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   _loginForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
     password: new FormControl(null, Validators.required)
-  });
+    });
+  _errorMessage: '' ;
 
   login() {
     if (!this._loginForm.valid) {
@@ -29,7 +30,10 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token', data.toString());
             this._router.navigate(['/userhome']);
           },
-          error => { }
+          error => {
+            console.log(error);
+            this._errorMessage = error.error.message;
+           }
         );
     }
     console.log(JSON.stringify(this._loginForm.value));
@@ -40,39 +44,6 @@ export class LoginComponent implements OnInit {
     private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
-      $('.ui.form')
-        .form({
-          fields: {
-            email: {
-              identifier  : 'email',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your e-mail'
-                },
-                {
-                  type   : 'email',
-                  prompt : 'Please enter a valid e-mail'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'password',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your password'
-                },
-                {
-                  type   : 'length[6]',
-                  prompt : 'Your password must be at least 6 characters'
-                }
-              ]
-            }
-          }
-        })
-      ;
     }
 
     gotoRegister() {
@@ -81,5 +52,9 @@ export class LoginComponent implements OnInit {
 
     isValid(controlName) {
       return this._loginForm.get(controlName).invalid && this._loginForm.get(controlName).touched;
+    }
+
+    clearErrors() {
+      this._errorMessage = '';
     }
 }
