@@ -1,92 +1,35 @@
 
-
-
-<div class="ui top fixed inverted menu">
-  <a id="toggle" class="header item" (click)="toggleSidebar()">
-    <i class="sidebar icon "></i>
-    Menu
-  </a>
-
-  <div class="header item">{{now}}</div>
-  <a href="." class="header item">{{title}}</a>
-  <a class="header item" routerLink="/chats">Themen</a>
+<div class="ui sidebar vertical left inverted menu" (click)="toggleSidebar()">
+  <a class="header item" routerLink="/userhome">Aktuelles</a>
   <a class="header item" routerLink="/members">Mitglieder</a>
-
-</div>
-
-<div class="ui container" style="margin-top: 50px">
-  <router-outlet></router-outlet>
+  <a class="header item" routerLink="/chats">Themen</a>
+  <a class="header item" routerLink="/userhome">Einstellungen</a>
 </div>
 
 
+<div class="pusher">
+  <div class="ui top fixed inverted menu">
+    <a id="toggle" class="header item" (click)="toggleSidebar()">
+      <i class="sidebar icon "></i>
+    </a>
 
-
-<!--
-<div class="ui left vertical inverted labeled icon sidebar menu visible">
-    <a class="item">
-        <i class="home icon"></i>
-        Home
-      </a>
-      <a class="item">
-        <i class="block layout icon"></i>
-        Topics
-      </a>
-      <a class="item">
-        <i class="smile icon"></i>
-        Friends
-      </a>
-</div>
--->
-
-<!--
-<div class="ui fixed inverted main menu">
-  <div class="ui container">
-    <div class="header item">{{now}}</div>
     <a href="." class="header item">{{title}}</a>
-    <a class="header item" routerLink="/chats">Themenxx</a>
-    <a class="header item" routerLink="/members">Mitglieder</a>
+
+    <a class="header item left icon floated right" routerLink="/userhome">
+      <i class="user icon" style="padding-right: 10px"></i>
+      <div *ngIf="!username">---</div>
+      {{username}}
+    </a>
   </div>
-</div>
--->
 
+  <div class="ui container" style="margin-top: 50px">
+    <router-outlet></router-outlet>
+  </div>
 
-<!--
-
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<a routerLink="/chats">Themen</a>&nbsp;|&nbsp;
-<a routerLink="/members">Mitglieder</a>
-
--->
-
-<!--div class="ui bottom attached segment pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu uncover visible" >
-      <a class="item">
-        <i class="home icon"></i>
-        Home
-      </a>
-      <a class="item">
-        <i class="block layout icon"></i>
-        Topics
-      </a>
-      <a class="item">
-        <i class="smile icon"></i>
-        Friends
-      </a>
-      <a class="item">
-        <i class="calendar icon"></i>
-        History
-      </a>
+  <div class="ui bottom fixed inverted inverted menu">
+    <div class="footer item floated right">
+      {{now}}
     </div>
-
-
-
-  <div class="pusher">
-
-<router-outlet></router-outlet>
-
   </div>
-</div-->
+
+</div>
