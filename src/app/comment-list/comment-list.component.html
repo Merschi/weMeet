@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div class="ui comments" style="margin-top: 100px">
+<div class="ui comments" style="margin-top: 100px;  margin-bottom: 40px">
   <div *ngFor="let comment of comments" class="ui comment">
     <div class="avatar">
       <i class="big user outline  icon"></i>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <button  [routerLink]="['/addcomment', chatRefId ]">Kommentar</button>
+  <button class="ui blue button" [routerLink]="['/addcomment', chatRefId ]">Kommentar</button>
 </div>
 
 

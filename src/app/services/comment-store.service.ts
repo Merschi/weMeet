@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Comment } from '../shared/comment';
+import * as moment from 'moment';
 import { ChatStoreService } from '../services/chat-store.service';
 
 const cs: ChatStoreService = new ChatStoreService;
@@ -75,5 +76,13 @@ export class CommentStoreService {
 
   getSubjectByChat(chatRefId: string): string {
     return cs.getChatById(chatRefId).getSubject();
+  }
+
+  add(comment: string, chatRefId: string, username: string) {
+
+    this.comments.push(new Comment(username,
+      chatRefId,
+      moment().toISOString(),
+      comment));
   }
 }

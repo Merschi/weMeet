@@ -6,14 +6,13 @@
   </div>
 </div>
 
-<div class="ui content" style="padding-top: 100px">
-<div class="ui centered card" >
-  <div class="content" >
-    <div class="header"><i class="comments outline middle aligned icon"></i>Kommentar eingeben</div>
-    <div class="extra content">
-      <div class="description">comment-form works!</div>
-    </div>
+<form [formGroup]="_commentForm" style="margin-top: 100px">
+  <div class="ui form segment">
+      <div class="field">
+        <label for="comment">Kommentar</label>
+        <input formControlName="comment" id="comment" placeholder="Dein Kommentar" type="text">
+      </div>
+      <button class="ui blue button" (click)="addComment()">Submit</button>
   </div>
+</form>
 
-</div>
-</div>
