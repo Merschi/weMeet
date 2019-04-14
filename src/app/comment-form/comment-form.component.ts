@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { ChatStoreService } from '../services/chat-store.service';
@@ -22,6 +22,7 @@ export class CommentFormComponent implements OnInit {
   username: string;
 
   constructor(
+    private _router: Router,
     private route: ActivatedRoute,
     private _commentStoreService: CommentStoreService,
     private _userService: UserService
@@ -49,7 +50,8 @@ export class CommentFormComponent implements OnInit {
     .subscribe(
       data => {
         this.username = data.toString();
-        this._commentStoreService.add(JSON.stringify(this._commentForm.value), this.chatRefId, this.username);
+        this._commentStoreService.add(this._commentForm.value.comment, this.chatRefId, this.username);
+        this._router.navigate(['/comments', this.chatRefId]);
       },
       error => { this.username = ''; }
     );

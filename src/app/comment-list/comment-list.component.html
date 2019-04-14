@@ -3,26 +3,45 @@
     Thema: {{chatSubject}}
   </div>
 </div>
-
-<div class="ui comments" style="margin-top: 100px;  margin-bottom: 40px">
-  <div *ngFor="let comment of comments" class="ui comment">
-    <div class="avatar">
-      <i class="big user outline  icon"></i>
-    </div>
+<div class="ui" style="margin-top: 100px;  margin-bottom: 200px">
+  <div *ngFor="let comment of comments" class="ui centered card">
     <div class="content">
-      <span class="author">{{comment.memberRefId}}</span>
-      <div class="metadata">
-        <div class="date">
+        <div class="date right floated meta">
           {{comment.getAt()}}
         </div>
-      </div>
-      <div class="text">
-        {{comment.text}}
-      </div>
+
+        <span class="author header">
+          <i class="user outline  icon"></i>
+          {{comment.memberRefId}}</span>
+    </div>
+
+    <div class="content text">
+      {{comment.text}}
     </div>
   </div>
-  <button class="ui blue button" [routerLink]="['/addcomment', chatRefId ]">Kommentar</button>
 </div>
+
+
+
+<div class="ui bottom fixed inverted blue menu" style="margin-bottom: 40px">
+  <div class="content" style="margin: auto">
+<div class="ui footer item" >
+<!--button class="ui blue button" [routerLink]="['/addcomment', chatRefId ]">Kommentar</button-->
+<form class="ui form" [formGroup]="_commentForm">
+  <div class="field blue">
+    <textarea rows="3" cols="50" formControlName="comment" id="comment" placeholder="Kommentar schreiben"
+      type="text"></textarea>
+  </div>
+  <div class="ui green right labeled icon button" (click)="addComment()">
+  <i class="arrow circle right icon"></i>
+  Absenden
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
 
 
 <!--
