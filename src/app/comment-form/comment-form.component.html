@@ -1,17 +1,12 @@
+<form class="form" [formGroup]="_commentForm">
 
-
-<div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
-  <div class="header fixed item">
-    Kommentar eingeben zu Thema: {{chatSubject}}
+  <div class="ui action input">
+    <textarea rows="1" cols="50" type="text" formControlName="comment" id="comment" placeholder="Kommentar schreiben zu '{{chatSubject}}'" >
+      </textarea>
+    <button class="ui teal icon button" (click)="addComment()">
+      <i class="arrow circle right icon"></i>
+    </button>
   </div>
-</div>
 
-<form [formGroup]="_commentForm" style="margin-top: 100px">
-  <div class="ui form segment">
-      <div class="field">
-        <label for="comment">Kommentar</label>
-        <input formControlName="comment" id="comment" placeholder="Dein Kommentar" type="text">
-      </div>
-      <button class="ui blue button" (click)="addComment()">Absenden</button>
-  </div>
 </form>
+

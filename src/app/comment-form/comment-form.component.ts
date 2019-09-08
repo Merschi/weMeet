@@ -18,16 +18,15 @@ export class CommentFormComponent implements OnInit {
   });
   chatRefId: string;
   chatSubject: string;
-  cs: ChatStoreService;
   username: string;
 
   constructor(
     private _router: Router,
     private route: ActivatedRoute,
     private _commentStoreService: CommentStoreService,
+    private _chatStoreService: ChatStoreService,
     private _userService: UserService
   ) {
-    this.cs = new ChatStoreService;
     this.updateChatRefId();
     this.updateChatSubject();
   }
@@ -37,20 +36,23 @@ export class CommentFormComponent implements OnInit {
   }
 
   updateChatSubject(): void {
-    this.chatSubject = this.cs.getChatById(this.chatRefId).getSubject();
+    this.chatSubject = this._chatStoreService.getChatById(this.chatRefId).getSubject();
   }
 
   addComment() {
+    console.log('add comment');
     if (!this._commentForm.valid) {
       console.log('invalid form!');
       return;
     }
 
+    console.log('add comment');
     this._userService.getUserName()
     .subscribe(
       data => {
         this.username = data.toString();
         this._commentStoreService.add(this._commentForm.value.comment, this.chatRefId, this.username);
+        console.log('add comment: ', JSON.stringify(this._commentForm.value.comment), 'User: ', this.username);
         this._router.navigate(['/comments', this.chatRefId]);
       },
       error => { this.username = ''; }

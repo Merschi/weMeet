@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'comments/:chatId', component: CommentListComponent },
   { path: 'chats', component: ChatListComponent },
   { path: 'members', component: MemberListComponent},
-  { path: 'addcomment/:chatId', component: CommentFormComponent}
+  { path: 'addcomment/:chatId', component: CommentFormComponent, outlet: 'bottom'}
 ];
 
 @NgModule({

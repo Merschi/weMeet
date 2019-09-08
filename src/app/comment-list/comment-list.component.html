@@ -1,18 +1,21 @@
-<div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
+
+<div class="ui fixed blue inverted secondary menu">
   <div class="header fixed item">
-    Thema: {{chatSubject}}
+    Thema: {{chatSubject}} ({{commentCount}})
   </div>
 </div>
-<div class="ui" style="margin-top: 100px;  margin-bottom: 200px">
-  <div *ngFor="let comment of comments" class="ui centered card">
-    <div class="content">
-        <div class="date right floated meta">
-          {{comment.getAt()}}
-        </div>
 
-        <span class="author header">
-          <i class="user outline  icon"></i>
-          {{comment.memberRefId}}</span>
+<div class="ui" style="border: 1px solid black; padding: 10px">
+  <div *ngFor="let comment of comments" class="ui centered card"
+    id="comment-container">
+    <div class="content">
+      <div class="date right floated meta">
+        {{comment.getAt()}}
+      </div>
+
+      <span class="author header">
+        <i class="user outline  icon"></i>
+        {{comment.memberRefId}}</span>
     </div>
 
     <div class="content text">
@@ -20,28 +23,25 @@
     </div>
   </div>
 </div>
-
-
-
+<!--
 <div class="ui bottom fixed inverted blue menu" style="margin-bottom: 40px">
   <div class="content" style="margin: auto">
-<div class="ui footer item" >
-<!--button class="ui blue button" [routerLink]="['/addcomment', chatRefId ]">Kommentar</button-->
-<form class="ui form" [formGroup]="_commentForm">
-  <div class="field blue">
-    <textarea rows="3" cols="50" formControlName="comment" id="comment" placeholder="Kommentar schreiben"
-      type="text"></textarea>
+    <div class="ui footer item">
+
+      <form class="ui form" [formGroup]="_commentForm">
+        <div class="field blue">
+          <textarea rows="3" cols="50" formControlName="comment" id="comment" placeholder="Kommentar schreiben"
+            type="text"></textarea>
+        </div>
+        <div class="ui green right labeled icon button" (click)="addComment()">
+          <i class="arrow circle right icon"></i>
+          Absenden
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="ui green right labeled icon button" (click)="addComment()">
-  <i class="arrow circle right icon"></i>
-  Absenden
 </div>
-</form>
-</div>
-</div>
-</div>
-
-
+ -->
 
 
 <!--

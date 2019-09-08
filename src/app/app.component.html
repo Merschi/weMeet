@@ -1,35 +1,37 @@
+<div class="segment">
 
-<div class="ui sidebar vertical left inverted menu" (click)="toggleSidebar()">
-  <a class="header item" routerLink="/userhome">Aktuelles</a>
-  <a class="header item" routerLink="/members">Mitglieder</a>
-  <a class="header item" routerLink="/chats">Themen</a>
-  <a class="header item" routerLink="/userhome">Einstellungen</a>
-</div>
+  <div id="mySidenav" class="ui vertical left inverted menu sidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+      <a  class="header item" routerLink="/userhome">Aktuelles</a>
+      <a  class="header item" routerLink="/members">Mitglieder</a>
+      <a  class="header item" routerLink="/chats">Themen</a>
+      <a  class="header item" routerLink="/userhome">Einstellungen</a>
 
-
-<div class="pusher">
-  <div class="ui top fixed inverted menu">
-    <a id="toggle" class="header item" (click)="toggleSidebar()">
-      <i class="sidebar icon "></i>
-    </a>
-
-    <a href="." class="header item">{{title}}</a>
-
-    <a class="header item icon floated right" routerLink="/userhome">
-      <i class="user icon" style="padding-right: 10px"></i>
-      <div *ngIf="!username">---</div>
-      {{username}}
-    </a>
   </div>
 
-  <div class="ui container" style="margin-top: 50px">
-    <router-outlet></router-outlet>
-  </div>
+  <div>
+    <div class="ui top fixed inverted menu">
+      <a id="toggle" class="header item" (click)="openNav()" >
+        <i class="sidebar icon "></i>
+      </a>
 
-  <div class="ui bottom fixed inverted inverted menu">
-    <div class="footer item floated right">
-      {{now}}
+      <a href="." class="header item">{{title}}</a>
+
+      <a class="header item icon floated right" routerLink="/userhome">
+        <i class="user icon" style="padding-right: 10px"></i>
+        <div *ngIf="!username">---</div>
+        {{username}}
+      </a>
+    </div>
+
+    <div class="ui container" style="margin-top: 50px">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="ui bottom fixed inverted inverted menu">
+      <div class="footer item floated right">
+        {{now}}
+      </div>
     </div>
   </div>
-
 </div>

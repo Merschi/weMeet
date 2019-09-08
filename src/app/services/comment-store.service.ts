@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 import { Comment } from '../shared/comment';
 import * as moment from 'moment';
 import { ChatStoreService } from '../services/chat-store.service';
 
-const cs: ChatStoreService = new ChatStoreService;
+const chatS: ChatStoreService = new ChatStoreService;
 
 @Injectable()
 export class CommentStoreService {
   private comments: Comment[];
+
+  updatedTs = new Subject<string>();
+
   constructor() {
     this.comments =
       [
@@ -61,22 +65,28 @@ export class CommentStoreService {
           'Ludgers c3 Kommentar....'
         )
       ];
+      this.updateTs();
+  }
+
+  private updateTs() {
+    this.updatedTs.next(moment.now.toString());
   }
 
   getByChat(chatRefId: string): Comment[] {
     console.log('get comments of chat: ', chatRefId);
-    return this.comments.filter(c => c.chatRefId === chatRefId);;
+    return this.comments.filter(c => c.chatRefId === chatRefId);
   }
 
   getSubjectByChat(chatRefId: string): string {
-    return cs.getChatById(chatRefId).getSubject();
+    return chatS.getChatById(chatRefId).getSubject();
   }
 
   add(comment: string, chatRefId: string, username: string) {
-
     this.comments.push(new Comment(username,
       chatRefId,
       moment().toISOString(),
       comment));
+
+    this.updateTs();
   }
 }
