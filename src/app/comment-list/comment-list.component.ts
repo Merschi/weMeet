@@ -37,8 +37,10 @@ export class CommentListComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    const container = document.getElementById('comment-container');
+    /* const container = document.getElementById('comment-container');
     container.scrollTop = container.scrollHeight;
     console.log('onChanges scrollHeight= ', container.scrollHeight, 'scrollTop: ', container.scrollTop);
+    */
+   window.scrollTo(0, document.body.scrollHeight);
   }
 }

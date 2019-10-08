@@ -1,11 +1,16 @@
 
-<div class="ui fixed blue inverted secondary menu">
+<!--
+<div class="ui fixed blue inverted secondary menu" style="margin-top: 40px">
   <div class="header fixed item">
     Thema: {{chatSubject}} ({{commentCount}})
   </div>
 </div>
 
-<div class="ui" style="border: 1px solid black; padding: 10px">
+-->
+
+
+<div class="ui segment" style="border: 1px solid black; padding: 10px; padding-bottom: 80px">
+  <div class="ui top attached label">Thema: {{chatSubject}} ({{commentCount}})</div>
   <div *ngFor="let comment of comments" class="ui centered card"
     id="comment-container">
     <div class="content">

@@ -40,6 +40,8 @@ export class CommentFormComponent implements OnInit {
   }
 
   addComment() {
+    const textArea: HTMLTextAreaElement = document.querySelector('textarea#comment');
+
     console.log('add comment');
     if (!this._commentForm.valid) {
       console.log('invalid form!');
@@ -57,6 +59,20 @@ export class CommentFormComponent implements OnInit {
       },
       error => { this.username = ''; }
     );
+
+    textArea.value = '';
+    textArea.style.height = '2em';
+  }
+
+  autoGrowTextArea(textField: HTMLElement) {
+    console.log('autoGrowTextArea', textField);
+    if (textField.clientHeight < textField.scrollHeight) {
+      textField.style.height = textField.scrollHeight + 'px';
+      if (textField.clientHeight < textField.scrollHeight) {
+        textField.style.height =
+          (textField.scrollHeight * 2 - textField.clientHeight) + 'px';
+      }
+    }
   }
 
   ngOnInit() { }
