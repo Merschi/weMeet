@@ -2,10 +2,10 @@
 
   <div id="mySidenav" class="ui vertical left inverted menu sidenav">
       <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-      <a  class="header item" routerLink="/userhome">Aktuelles</a>
-      <a  class="header item" routerLink="/members">Mitglieder</a>
-      <a  class="header item" routerLink="/chats">Themen</a>
-      <a  class="header item" routerLink="/userhome">Einstellungen</a>
+      <a  class="header item" routerLink="/userhome" (click)="closeNav()">Aktuelles</a>
+      <a  class="header item" routerLink="/members" (click)="closeNav()">Mitglieder</a>
+      <a  class="header item" routerLink="/chats" (click)="closeNav()">Themen</a>
+      <a  class="header item" routerLink="/userhome" (click)="closeNav()">Einstellungen</a>
 
   </div>
 
@@ -28,13 +28,11 @@
       <router-outlet></router-outlet>
     </div>
 
-
-      <div style="position: fixed;bottom:50px; left: 50%;transform: translateX(-50%);">
+<!--
+  <div style="position: fixed;bottom:50px; left: 50%;transform: translateX(-50%);">
       <router-outlet name="bottom"></router-outlet>
-      </div>
-
-
-
+  </div>
+-->
 
     <div class="ui bottom fixed inverted inverted menu">
       <div class="footer item floated right">

@@ -1,2 +1,2 @@
-textarea#comment { resize: none
+textarea#comment { resize: none; overflow: hidden
 }

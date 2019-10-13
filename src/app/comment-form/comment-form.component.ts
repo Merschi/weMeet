@@ -33,6 +33,7 @@ export class CommentFormComponent implements OnInit {
 
   updateChatRefId(): void {
     this.chatRefId = this.route.snapshot.paramMap.get('chatId');
+    console.log('comment form: chatRefId: ', this.chatRefId);
   }
 
   updateChatSubject(): void {
@@ -40,7 +41,7 @@ export class CommentFormComponent implements OnInit {
   }
 
   addComment() {
-    const textArea: HTMLTextAreaElement = document.querySelector('textarea#comment');
+    const textArea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector('textarea#comment');
 
     console.log('add comment');
     if (!this._commentForm.valid) {

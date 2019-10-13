@@ -1,7 +1,7 @@
 <form class="form" [formGroup]="_commentForm">
   <div style="display:inline-flex;align-items:flex-end">
     <div class="ui action input">
-      <textarea rows="1" cols="50" type="text" formControlName="comment" id="comment"
+      <textarea rows="1" cols="30" type="text" formControlName="comment" id="comment"
         placeholder="Kommentar schreiben zu '{{chatSubject}}'" (keyup)="autoGrowTextArea($event.target)">
   </textarea>
     </div>
