@@ -20,9 +20,9 @@ export class CommentListComponent implements OnInit, AfterViewChecked {
   subscription: Subscription;
   constructor(
     private route: ActivatedRoute,
-    private commentS: CommentStoreService
+    private commentStoreService: CommentStoreService
   ) {
-    this.subscription = commentS.updatedTs.subscribe( () => this.comments = this.commentS.getByChat(this.chatRefId));
+    this.subscription = commentStoreService.updatedTs.subscribe( () => this.comments = this.commentStoreService.getByChat(this.chatRefId));
     this.updateChatRefId(); }
 
   updateChatRefId(): void {
@@ -30,8 +30,8 @@ export class CommentListComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.comments = this.commentS.getByChat(this.chatRefId);
-    this.chatSubject = this.commentS.getSubjectByChat(this.chatRefId);
+    this.comments = this.commentStoreService.getByChat(this.chatRefId);
+    this.chatSubject = this.commentStoreService.getSubjectByChat(this.chatRefId);
     this.commentCount = this.comments.length;
     console.log('onInit');
   }
@@ -41,6 +41,13 @@ export class CommentListComponent implements OnInit, AfterViewChecked {
     container.scrollTop = container.scrollHeight;
     console.log('onChanges scrollHeight= ', container.scrollHeight, 'scrollTop: ', container.scrollTop);
     */
+   /*
    window.scrollTo(0, document.body.scrollHeight);
+   */
+    document.getElementById('subtitle').innerText = "Thema: " + this.chatSubject;
+  }
+
+  ngOnDestroy() {
+    document.getElementById('subtitle').innerText = "";
   }
 }

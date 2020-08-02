@@ -57,6 +57,7 @@ export class CommentFormComponent implements OnInit {
         this._commentStoreService.add(this._commentForm.value.comment, this.chatRefId, this.username);
         console.log('add comment: ', JSON.stringify(this._commentForm.value.comment), 'User: ', this.username);
         this._router.navigate(['/comments', this.chatRefId]);
+        this._commentForm.reset();
       },
       error => { this.username = ''; }
     );
@@ -65,14 +66,9 @@ export class CommentFormComponent implements OnInit {
     textArea.style.height = '2em';
   }
 
-  autoGrowTextArea(textField: HTMLElement) {
-    console.log('autoGrowTextArea', textField);
-    if (textField.clientHeight < textField.scrollHeight) {
-      textField.style.height = textField.scrollHeight + 'px';
-      if (textField.clientHeight < textField.scrollHeight) {
-        textField.style.height =
-          (textField.scrollHeight * 2 - textField.clientHeight) + 'px';
-      }
+  autoGrow(oField: HTMLElement) {
+    if (oField.scrollHeight > oField.clientHeight) {
+      oField.style.height = oField.scrollHeight + "px";
     }
   }
 

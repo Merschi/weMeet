@@ -17,6 +17,8 @@
 
       <a href="." class="header item">{{title}}</a>
 
+      <div id="subtitle" class="header item floated left" ></div>
+
       <a class="header item icon floated right" routerLink="/userhome">
         <i class="user icon" style="padding-right: 10px"></i>
         <div *ngIf="!username">---</div>
@@ -24,7 +26,9 @@
       </a>
     </div>
 
-    <div class="ui container" style="margin-top: 50px">
+    <div style="margin-top: 60px">&nbsp;</div>
+
+    <div class="ui scrollable container">
       <router-outlet></router-outlet>
     </div>
 

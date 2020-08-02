@@ -8,70 +8,22 @@
 
 -->
 
-
-<div class="ui segment" style="border: 1px solid black; padding: 10px; padding-bottom: 80px">
-  <div class="ui top attached label">Thema: {{chatSubject}} ({{commentCount}})</div>
-  <div *ngFor="let comment of comments" class="ui centered card"
-    id="comment-container">
+  <div *ngFor="let comment of comments" class="ui centered card">
     <div class="content">
       <div class="date right floated meta">
         {{comment.getAt()}}
       </div>
-
+  
       <span class="author header">
         <i class="user outline  icon"></i>
         {{comment.memberRefId}}</span>
     </div>
-
+  
     <div class="content text">
       {{comment.text}}
     </div>
   </div>
-</div>
+
 <div style="position: fixed;bottom:50px; left: 50%;transform: translateX(-50%);">
   <wm-comment-form></wm-comment-form>
 </div>
-<!--
-<div class="ui bottom fixed inverted blue menu" style="margin-bottom: 40px">
-  <div class="content" style="margin: auto">
-    <div class="ui footer item">
-
-      <form class="ui form" [formGroup]="_commentForm">
-        <div class="field blue">
-          <textarea rows="3" cols="50" formControlName="comment" id="comment" placeholder="Kommentar schreiben"
-            type="text"></textarea>
-        </div>
-        <div class="ui green right labeled icon button" (click)="addComment()">
-          <i class="arrow circle right icon"></i>
-          Absenden
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
- -->
-
-
-<!--
-     <span class="ui small red tag label">aktueller Termin</span>
-
-    <div class="content">
-    <span class="ui star rating" data-rating="3" data-max-rating="7"></span>
-    <span class="right floated" data-tooltip="Teilnehmen" data-position="top left">
-      <i class="heart outline like icon"></i>
-      <i class="thumbs down icon"></i>
-      <a><i class="green thumbs up icon"></i></a>
-       <i class="green thumbs up icon"></i>
-      <span data-content="Add users to your feed">
-       <i class="green thumbs up icon"></i>
-        </span>
-
-      17 likes
-    </span>
-        <i class="comment icon"></i>
-        5 comments
-        <i class="small green checkmark icon"></i><i class="small green checkmark icon"></i><i class="small green checkmark icon"></i><i class="small green checkmark icon"></i>
-    <i class="green check square outline icon"></i><i class="green check square outline icon"></i><i class="large green user circle outline icon"></i><i class="green check circle outline icon"></i><i class="grey question circle outline icon"></i>
-        <div class="ui star rating" data-rating="3" data-max-rating="7"></div>
-  </div>
--->
