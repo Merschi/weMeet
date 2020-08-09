@@ -4,7 +4,9 @@ import { HttpClient, HttpBackend, HttpHeaders, HttpParams } from '@angular/commo
 @Injectable()
 export class UserService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(
+    private _http: HttpClient) {
+   }
 
   register(body: any) {
     return this._http.post('https://ottelinux:3000/users/register', body, {

@@ -26,11 +26,12 @@
         </div>
 
         <button class="ui blue button" (click)="register()">Submit</button>
-
-
-
     </div>
   </form>
+  <div style="white-space: pre-line" class="ui message" *ngIf="_errorMessage">
+    {{_errorMessage}}
+  </div>
+
   <div class="ui message">
     Bereits registriert?
     <div>

@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
     cpass: new FormControl(null, Validators.required)
   });
 
+  _errorMessage: string = "";
+
   constructor(private _router: Router, private _userService: UserService) { }
 
   gotoLogin() {
@@ -35,8 +37,10 @@ export class RegisterComponent implements OnInit {
         console.log(data);
         this._router.navigate(['/login']);
       },
-      error => console.log(error)
-    );
+      error => {
+        console.log(error.error.message);
+        this._errorMessage =  error.error.message;
+      });
     console.log(JSON.stringify(this._registerForm.value));
   }
 
